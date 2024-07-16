@@ -21,20 +21,7 @@ function App() {
       {/* Podemos llamar al componente varias veces para ahorrar lineas de codigo y hacer que este sea mas comprensible
       en vez de poner mas lineas lo reemplazamos por las llamadas al componente TodoItems */}
 
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
   );
 }

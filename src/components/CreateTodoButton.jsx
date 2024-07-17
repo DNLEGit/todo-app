@@ -6,7 +6,12 @@ import '../styles/CreateTodoButton.css'
 
 function CreateTodoButton() {
   return (
-    <button className='CreateTodoButton'>+</button>
+    <button 
+      className='CreateTodoButton'
+      /* La funcion onClick se encarga de capturar el evento de hacerle clicl al boton para luego poder usar el input con la finalidad
+      que le querramos dar */
+      onClick={() => console.log('Hiciste click')}
+    >+</button>
   )
 }
 

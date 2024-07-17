@@ -4,8 +4,10 @@ import '../styles/TodoSearch.css';
 function TodoSearch() {
   return (
     <input 
-    className='TodoSearch'
-    placeholder='Cortar cebollas' />
+      className='TodoSearch'
+      placeholder='Cortar cebollas'
+      onChange={(event) => console.log(event.target.value)}
+       />
   )
 }
 

@@ -6,9 +6,10 @@ para de esta manera poder hacer que el todo counter muestre de forma dinamica la
 
 function TodoCounter({ total, completed }) {
   return (
-    <h1>
+    <h1 className='TodoCounter'>
+
       {/* De esta manera insertamos las propiedades en el jsx */}
-    Has completado {completed} de {total} TODOS
+    Has completado <span>{completed}</span> de <span>{total}</span> TODOs
 
     </h1>
   )

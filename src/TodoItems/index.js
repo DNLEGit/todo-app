@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/TodoItems.css'
+import './TodoItems.css'
 import { FaDeleteLeft } from "react-icons/fa6";
 import { BsBookmarkCheckFill } from "react-icons/bs";
 
@@ -27,7 +27,7 @@ function TodoItems({ text, completed, onComplete, onDelete}) {
   );
 }
 
-export default TodoItems;
+export { TodoItems };
 
 
 

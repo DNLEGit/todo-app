@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/CreateTodoButton.css'
+import './CreateTodoButton.css'
 
 /* Compoente todo button */
 
@@ -15,4 +15,4 @@ function CreateTodoButton() {
   )
 }
 
-export default CreateTodoButton;
+export  {CreateTodoButton};

@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/TodoSearch.css';
+import './TodoSearch.css';
 /* Componente todo search */
 function TodoSearch({searchValue, setSearchValue}) {
   return (
@@ -16,4 +16,4 @@ function TodoSearch({searchValue, setSearchValue}) {
   )
 }
 
-export default TodoSearch;
+export {TodoSearch};

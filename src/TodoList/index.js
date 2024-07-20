@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/TodoList.css'
+import './TodoList.css'
 /* Componente todo list, este recive como parametro props, esto sirve para poder retornar codigo js con el componente*/
 function TodoList(props) {
   return (
@@ -11,4 +11,4 @@ function TodoList(props) {
   )
 }
 
-export default TodoList;
+export {TodoList};

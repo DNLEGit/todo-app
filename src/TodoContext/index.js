@@ -14,6 +14,9 @@ function TodoProvider( {children} ){
     
         // Estado para el valor de búsqueda
         const [searchValue, setSearchValue] = React.useState('');
+
+        const [openModal, setOpenModal] = React.useState(false);
+
     
         // Calcula la cantidad de todos completados
         const completedTodos = todos.filter(todo => !!todo.completed).length;
@@ -52,7 +55,9 @@ function TodoProvider( {children} ){
         completedTodos,
         deleteTodo,
         loading,
-        error
+        error,
+        openModal,
+        setOpenModal,
     }}>
         {children}
     </TodoContext.Provider>

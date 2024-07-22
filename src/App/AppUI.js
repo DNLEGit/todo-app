@@ -8,10 +8,12 @@ import { TodosLoading } from '../TodosLoading';
 import { TodosError } from '../TodosError';
 import { EmptyTodos } from '../EmptyTodos';
 import { TodoContext } from '../TodoContext';
+import { Modal } from '../Modal';
+import { TodoForm } from '../TodoForm';
 
 function AppUI() {
     return (
-        <React.Fragment>
+        <>
             
             {/* Llamamos al componente TodoCounter y le pasamos las props necesarias */}
             <TodoCounter />
@@ -25,8 +27,12 @@ function AppUI() {
                     error,
                     searchedTodos,
                     completeTodos,
-                    deleteTodos
+                    deleteTodos,
+                    openModal,
+                    setOpenModal
                 }) =>(
+                
+                <>
                 
                 <TodoList>
                     {loading && <TodosLoading />}
@@ -44,11 +50,23 @@ function AppUI() {
                         />
                     ))}
                 </TodoList>
+
+               {/*  /* Llamamos al componente CreateTodoButton, Cuando se hace click en este se cambia el estado de la ventana modal  */ }
+                <CreateTodoButton onClick={() => setOpenModal(state => !state)}/>
+
+                {/* Verificamos el estado del componente modal y lo llamamos */}
+                {openModal && (
+                    <Modal>
+                        <TodoForm/>
+                    </Modal>
+                )}
+                
+                </>
+                
                 )}
             </TodoContext.Consumer>
-            {/* Llamamos al componente CreateTodoButton */}
-            <CreateTodoButton />
-        </React.Fragment>
+            
+        </>
     );
 }
 

@@ -4,11 +4,11 @@ import './CreateTodoButton.css'
 /* Compoente todo button */
 
 
-function CreateTodoButton( { onClick } ) {
+function CreateTodoButton( { setOpenModal } ) {
   return (
     
 <button type="button" className="button"
-  onClick={onClick}
+  onClick={setOpenModal}
 >
   <span className="button__text">Add TODO</span>
   <span className="button__icon">

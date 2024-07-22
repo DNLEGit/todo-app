@@ -12,27 +12,27 @@ import { Modal } from '../Modal';
 import { TodoForm } from '../TodoForm';
 
 function AppUI() {
+    const {
+        loading,
+        error,
+        searchedTodos,
+        completeTodo,
+        deleteTodo,
+        openModal,
+        setOpenModal,
+    } = React.useContext(TodoContext);
+    
     return (
         <>
-            
-            {/* Llamamos al componente TodoCounter y le pasamos las props necesarias */}
-            <TodoCounter />
-
-            {/* Llamamos al componente TodoSearch y le pasamos las props necesarias */}
-            <TodoSearch/>
-
             <TodoContext.Consumer>
-                {({
-                    loading,
-                    error,
-                    searchedTodos,
-                    completeTodos,
-                    deleteTodos,
-                    openModal,
-                    setOpenModal
-                }) =>(
+                {() =>(
                 
                 <>
+                {/* Llamamos al componente TodoCounter y le pasamos las props necesarias */}
+                <TodoCounter />
+
+                {/* Llamamos al componente TodoSearch y le pasamos las props necesarias */}
+                <TodoSearch/>       
                 
                 <TodoList>
                     {loading && <TodosLoading />}
@@ -45,19 +45,19 @@ function AppUI() {
                             key={todo.text}
                             text={todo.text}
                             completed={todo.completed}
-                            onComplete={() => completeTodos(todo.text)}
-                            onDelete={() => deleteTodos(todo.text)}
+                            onComplete={() => completeTodo(todo.text)}
+                            onDelete={() => deleteTodo(todo.text)}
                         />
                     ))}
                 </TodoList>
 
                {/*  /* Llamamos al componente CreateTodoButton, Cuando se hace click en este se cambia el estado de la ventana modal  */ }
-                <CreateTodoButton onClick={() => setOpenModal(state => !state)}/>
+                <CreateTodoButton setOpenModal = {setOpenModal}/>
 
                 {/* Verificamos el estado del componente modal y lo llamamos */}
                 {openModal && (
                     <Modal>
-                        <TodoForm/>
+                        <TodoForm setOpenModal = {setOpenModal}/>
                     </Modal>
                 )}
                 

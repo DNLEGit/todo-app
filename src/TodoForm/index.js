@@ -1,20 +1,27 @@
 import React from 'react'
 import './TodoForm.css'
 import { TodoContext } from '../TodoContext'
+
  
-function TodoForm( {onClick} ) {
+function TodoForm(  ) {
 
   const {
     setOpenModal,
+    addTodo,
+  } = React.useContext(TodoContext);
 
-  } = React.useContext;
+  const [newTodoValue, setNewTodoValue] = React.useState('');
   
   const onSubmit = (event) =>{
     event.preventDefault(TodoContext);
+    addTodo(newTodoValue) 
     setOpenModal(false);
 }
-  const onCancel = (event) => {
+  const onCancel = () => {
     setOpenModal(false);
+  }
+  const onChange = (event) => {
+    setNewTodoValue(event.target.value);
   }
 
   return (
@@ -22,6 +29,8 @@ function TodoForm( {onClick} ) {
         <label>Escribe tu nuevo TODO</label>
         <textarea
             placeholder='Ingrese el TODO'
+            value={newTodoValue}
+            onChange={onChange}
         ></textarea>
         <div className='Btn-container'>
             {/* Boton para agregar el todo desde el formulario */}

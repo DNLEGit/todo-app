@@ -28,6 +28,15 @@ function TodoProvider( {children} ){
         const searchedTodos = todos.filter(todo => {
             return todo.text.toLowerCase().includes(searchValue.toLowerCase());
         });
+
+        const addTodo = (text) => {
+            const newTodos = [...todos];
+            newTodos.push({
+                text: text,
+                completed: false,
+            });
+            saveTodos(newTodos)
+        }
     
         // Marca un todo como completado
         const completeTodo = (text) => {
@@ -58,6 +67,7 @@ function TodoProvider( {children} ){
         error,
         openModal,
         setOpenModal,
+        addTodo,
     }}>
         {children}
     </TodoContext.Provider>

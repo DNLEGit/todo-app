@@ -5,11 +5,13 @@ import { TodoContext } from '../TodoContext';
 /* Componente todo counter, Este esta reciviendo los parametros total y completed que son props que vienen de otros componentes
 para de esta manera poder hacer que el todo counter muestre de forma dinamica la cantidad de todos completados y la cantidad total*/
 
-function TodoCounter({}) {
+function TodoCounter() {
+  
   const {
     completedTodos,
     totalTodos,
   } = React.useContext(TodoContext)
+
   return (
     <h1 className='TodoCounter'>
 

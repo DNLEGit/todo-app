@@ -14,7 +14,7 @@ function TodoProvider( {children} ){
     
         // Estado para el valor de búsqueda
         const [searchValue, setSearchValue] = React.useState('');
-
+        //Estadp para la ventana modal de add todos
         const [openModal, setOpenModal] = React.useState(false);
 
     
